@@ -281,10 +281,15 @@ public class TestExecuter {
    				}
    			}
    			
-   			if(failure.getMessage().equals(""))
+   			//put the failure messages into the test results
+   			if(failure.getMessage() == null)
    				originalResults.put(nameOfTest, nameOfTest + ": " + lineNumber + "; " + "fail");
-   			else
-   				originalResults.put(nameOfTest, nameOfTest + ": " + lineNumber + "; " + failure.getMessage());
+   			else{
+	   			if(failure.getMessage().equals(""))
+	   				originalResults.put(nameOfTest, nameOfTest + ": " + lineNumber + "; " + "fail");
+	   			else
+	   				originalResults.put(nameOfTest, nameOfTest + ": " + lineNumber + "; " + failure.getMessage());
+   			}
   			
   		}
   		System.out.println(originalResults.toString());
