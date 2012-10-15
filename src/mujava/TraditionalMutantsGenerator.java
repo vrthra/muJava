@@ -161,7 +161,7 @@ public class TraditionalMutantsGenerator extends MutantsGenerator
      
                try
                {
-                  // generate a list of methods from the original java class
+                  //generate a list of methods from the original java class
             	  //System.out.println("MutationSystem.MUTANT_PATH: " + MutationSystem.MUTANT_PATH);
                   File f = new File(MutationSystem.MUTANT_PATH, "method_list");
                   FileOutputStream fout = new FileOutputStream(f);

@@ -389,6 +389,7 @@ public abstract class MutantsGenerator
    public void compileMutants()
    {
       File f = new File(MutationSystem.MUTANT_PATH);
+      
       String[] s = f.list(new MutantDirFilter());
 
       for (int i=0; i<s.length; i++)
