@@ -98,6 +98,7 @@ public class VariableBinder extends ScopeHandler {
 		super.evaluateDown(ptree);
 		
 		String identifier = ptree.getName();
+
 		if(ptree.getTypeBound() != ""){			
 			String[] types = ptree.getTypeBound().split("&");
 
@@ -108,11 +109,10 @@ public class VariableBinder extends ScopeHandler {
 		}
 		else{
 			OJClass OBJECT = OJClass.forClass(Object.class);
-			//System.out.println("env.getClass()" + env.getClass());
-		//	if(env.getClass().toString().equals("openjava.mop.ClassEnvironment")){
-		//		env.
-		//	}
-			env.record(identifier, OBJECT);
+
+			//env.record(identifier, OBJECT);
+			getEnvironment().recordGenerics(identifier, OBJECT);
+			
 			//System.out.println("env: " + env.toString());
 		}
 		return ptree;
