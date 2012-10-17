@@ -39,6 +39,7 @@ public class Mutator extends mujava.openjava.extension.VariableBinder
       try 
       {
     	 //System.out.println("p: " + p);
+    	// System.out.println("getEnvironment() : " + getEnvironment().toString());
 	     result = p.getType( getEnvironment() );
 	     
       } catch ( Exception e ) {	  

@@ -1084,16 +1084,20 @@ public class MutantCodeWriter extends ParseTreeVisitor
         ParameterList params = p.getParameters();
         out.print( "(" );
         if (! params.isEmpty()) {
-	    out.print( " " );  params.accept( this );  out.print( " " );
+        	out.print( " " );  
+        	params.accept( this );  
+        	out.print( " " );
         } else {
-	    params.accept( this );
+        	params.accept( this );
         }
         out.print( ")" );
 
         TypeName[] tnl = p.getThrows();
         if (tnl.length != 0) {
-	    out.println(); line_num++;
-	    writeTab();  writeTab();
+        	out.println(); 
+        	line_num++;
+        	writeTab();  
+        	writeTab();
             out.print( "throws " );
             tnl[0].accept( this );
             for (int i = 1; i < tnl.length; ++i) {
