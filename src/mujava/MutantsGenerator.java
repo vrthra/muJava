@@ -75,20 +75,21 @@ public abstract class MutantsGenerator
    {
       Debug.print("-------------------------------------------------------\n");
       Debug.print("* Generating parse tree. \n" );
+
       generateParseTree();
       Debug.print("..done. \n" );
       //System.out.println("0");
       Debug.print("* Initializing parse tree. \n" );
       initParseTree();
       Debug.print("..done. \n" );
-     // System.out.println("1");
+      //System.out.println("1");
       Debug.print("* Generating Mutants \n" );
       genMutants();
       Debug.print("..done.\n" );
-     // System.out.println("2");
+      //System.out.println("2");
       Debug.print("* Arranging original soure code. \n" );
       arrangeOriginal();
-     // System.out.println("3");
+      //System.out.println("3");
       compileOriginal();
       Debug.print("..done. \n" );
       Debug.flush();
@@ -219,11 +220,11 @@ public abstract class MutantsGenerator
             int len = original_file.getName().length();
             pubcls_name = original_file.getName().substring(0, len-6);
          }
-         //System.out.println("generate parse tree: " + pubcls_name);
+         
          file_env = new FileEnvironment(OJSystem.env, comp_unit, pubcls_name);
          ClassDeclarationList typedecls = comp_unit.getClassDeclarations();
          
-         for (int j=0; j<typedecls.size(); ++j)
+         for (int j = 0; j < typedecls.size(); ++j)
          {
             ClassDeclaration class_decl = typedecls.get(j);
             OJClass c = makeOJClass(file_env, class_decl);
@@ -239,6 +240,7 @@ public abstract class MutantsGenerator
       catch (Exception e)
       {
          System.err.println("errors during parsing. " + e);
+         System.out.println(e);
          e.printStackTrace();
       }
    }
@@ -339,17 +341,19 @@ public abstract class MutantsGenerator
       Parser parser;
       try
       {
-         parser = new Parser(new java.io.FileInputStream( file ) );
+         parser = new Parser(new java.io.FileInputStream( file ) );        
       } 
       catch ( java.io.FileNotFoundException e ) 
       {
          System.err.println( "File " + file + " not found." );
          return null;
       }
+      
       CompilationUnit result;
       try
       {
-         result = parser.CompilationUnit( OJSystem.env );
+    	 System.out.println( "File " + file );
+         result = parser.CompilationUnit( OJSystem.env );         
       } 
       catch (ParseException e) 
       {

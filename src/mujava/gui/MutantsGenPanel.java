@@ -399,7 +399,7 @@ public class MutantsGenPanel extends JPanel
       
       //disable the button
       runB.setEnabled(false);
-
+      
       for (int i=0; i<file_list.length; i++)
       {
       // file_name = ABSTRACT_PATH - MutationSystem.SRC_PATH
@@ -407,7 +407,7 @@ public class MutantsGenPanel extends JPanel
          String file_name = file_list[i];
          try
          {
-            System.out.println(i + " : " + file_name);
+            //System.out.println(i + " : " + file_name);
             // [1] Examine if the target class is interface or abstract class
             //     In that case, we can't apply mutation testing.
 
@@ -428,7 +428,7 @@ public class MutantsGenPanel extends JPanel
             }
            
             int class_type = MutationSystem.getClassType(class_name);
-            
+
 			if (class_type == MutationSystem.NORMAL)
 			{   // do nothing?
 			} 
@@ -436,7 +436,12 @@ public class MutantsGenPanel extends JPanel
 			{
                System.out.println(" -- "  + file_name + " class contains 'static void main()' method.");
                System.out.println("    Pleas note that mutants are not generated for the 'static void main()' method");
-            } 
+            }
+			//Added on 1/19/2013, no mutants will be generated for a class having only one main method
+			else if(class_type == MutationSystem.MAIN_ONLY){
+				System.out.println("Class " + file_name + " has only the 'static void main()' method and no mutants will be generated.");
+				break;
+			}
 			else
 			{
                switch (class_type)
@@ -463,6 +468,8 @@ public class MutantsGenPanel extends JPanel
             
             //File[] original_files = new File[1];
             //original_files[0] = new File(MutationSystem.SRC_PATH,file_name);
+            //System.out.println("MutationSystem.SRC_PATH: " + MutationSystem.SRC_PATH);
+            //System.out.println("file_name: " + file_name);
             File original_file = new File(MutationSystem.SRC_PATH, file_name);
            
             /*AllMutantsGenerator genEngine;
@@ -482,6 +489,8 @@ public class MutantsGenPanel extends JPanel
             //do not generate traditional mutants if no class traditional operator is selected
             if(traditional_ops != null){
 	            TraditionalMutantsGenerator tmGenEngine;
+	            //System.out.println("original_file: " + original_file);
+	            //System.out.println("traditional_ops: " + traditional_ops);
 	            tmGenEngine = new TraditionalMutantsGenerator(original_file,traditional_ops);
 	            tmGenEngine.makeMutants();
 	            tmGenEngine.compileMutants();
@@ -513,7 +522,7 @@ public class MutantsGenPanel extends JPanel
       parent_frame.cvPanel.refreshEnv();
       parent_frame.tvPanel.refreshEnv();
       System.out.println("------------------------------------------------------------------");
-      System.out.println(" All files are handled");
+      System.out.println("All files are handled");
    }
 
    
