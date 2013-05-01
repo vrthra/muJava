@@ -55,9 +55,9 @@ public class MutationSystem extends OJSystem
 
    /** home path where inputs and output of mujava system are located*/
    //public static String SYSTEM_HOME = "C:/jmutation";
-   //public static String SYSTEM_HOME = "E:/muJavaJunit";
-   public static String SYSTEM_HOME = "E:/mujava";
-   //public static String SYSTEM_HOME = System.getProperty("user.dir");
+   //public static String SYSTEM_HOME = "/Users/nli/Documents/mujava";
+   //public static String SYSTEM_HOME = "E:/mujava";
+   public static String SYSTEM_HOME = System.getProperty("user.dir");
 
    /** path of Java source files which mutation is applied to  */
    public static String SRC_PATH = SYSTEM_HOME + "/src";
@@ -109,11 +109,11 @@ public class MutationSystem extends OJSystem
    public static String LOG_IDENTIFIER = ":";
     
    /** List of names of class mutation operators */
-   public static String[] cm_operators = { "IHI","IHD","IOD","IOP","IOR","ISI","ISD","IPC",  // 8°³
-                                            "PNC","PMD","PPD","PCI","PCC","PCD","PRV",        // 7°³
-                                            "OMR","OMD","OAN",                    // 3°³
-                                            "JTI","JTD","JSI","JSD","JID","JDC",              // 6°³
-                                            "EOA","EOC","EAM","EMM" };                        // 4°³ - ÃÑ 28°³
+   public static String[] cm_operators = { "IHI","IHD","IOD","IOP","IOR","ISI","ISD","IPC",  // 8ï¿½ï¿½
+                                            "PNC","PMD","PPD","PCI","PCC","PCD","PRV",        // 7ï¿½ï¿½
+                                            "OMR","OMD","OAN",                    // 3ï¿½ï¿½
+                                            "JTI","JTD","JSI","JSD","JID","JDC",              // 6ï¿½ï¿½
+                                            "EOA","EOC","EAM","EMM" };                        // 4ï¿½ï¿½ - ï¿½ï¿½ 28ï¿½ï¿½
 
    // public static String[] first_tm_operators = {  "ABS","AOR","LCR","ROR","UOI" };
    /*public static String[] second_tm_operators = {  "AOR","AOD","AOI","ROR",
@@ -151,7 +151,6 @@ public class MutationSystem extends OJSystem
       try 
       {
          Class c = Class.forName (class_name);
-         
          if (c.isInterface())       
             return INTERFACE;
          
@@ -159,7 +158,7 @@ public class MutationSystem extends OJSystem
             return ABSTRACT;
          
          Method[] ms = c.getDeclaredMethods();
-         
+
          if (ms != null)
          {
             if ( (ms.length == 1) && (ms[0].getName().equals("main"))) 

@@ -762,7 +762,9 @@ public class MutantCodeWriter extends ParseTreeVisitor
         	writeArguments( arguments );
     	
         if(classBoday != null){       	
-	        writeTab();  out.println( "{" ); line_num++;
+	        writeTab();  
+	        out.println( "{" ); 
+	        line_num++;
 	        if (classBoday.isEmpty()) {
 	        	classBoday.accept( this );
 	        } else {
@@ -772,6 +774,8 @@ public class MutantCodeWriter extends ParseTreeVisitor
 	            out.println();
 	  			line_num++;
 	        }
+	        out.println( "}" ); 
+	        line_num++;
         }
     }
 

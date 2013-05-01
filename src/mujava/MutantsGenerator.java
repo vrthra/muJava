@@ -33,7 +33,7 @@ public abstract class MutantsGenerator
    //private boolean debug = false;
 
    /** Java source file where mutation operators are applied to */
-   File original_file;         // mutationÀ» Àû¿ëÇÒ file
+   File original_file;         // mutationï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ file
 
    /** mutation operators to apply */
    String[] operators = null;

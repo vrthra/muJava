@@ -428,7 +428,7 @@ public class MutantsGenPanel extends JPanel
             }
            
             int class_type = MutationSystem.getClassType(class_name);
-
+            
 			if (class_type == MutationSystem.NORMAL)
 			{   // do nothing?
 			} 
@@ -468,8 +468,7 @@ public class MutantsGenPanel extends JPanel
             
             //File[] original_files = new File[1];
             //original_files[0] = new File(MutationSystem.SRC_PATH,file_name);
-            //System.out.println("MutationSystem.SRC_PATH: " + MutationSystem.SRC_PATH);
-            //System.out.println("file_name: " + file_name);
+            
             File original_file = new File(MutationSystem.SRC_PATH, file_name);
            
             /*AllMutantsGenerator genEngine;
