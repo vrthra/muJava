@@ -7,12 +7,16 @@
 package mujava.test;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import mujava.MutationSystem;
 
 /**
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2005 by Yu-Seung Ma, ALL RIGHTS RESERVED </p>
  * @author Yu-Seung Ma
+ * @author Nan Li modified on 06/30/2013 for adding getResource(String)
  * @version 1.0
   */
 
@@ -118,6 +122,24 @@ public class JMutationLoader extends ClassLoader{
       return null;
     }
     return out.toByteArray();
+  }
+  
+  /**
+   * Overrides getResource (String) to get non-class files including resource bundles from property files
+   */
+  @Override
+  public URL getResource(String name){
+	  URL url = null;
+	  File resource = new File(MutationSystem.CLASS_PATH, name);
+	  if(resource.exists()){
+		  try {
+			return resource.toURI().toURL();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	  }
+	  return url;
   }
 }
 
