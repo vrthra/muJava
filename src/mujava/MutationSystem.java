@@ -55,9 +55,9 @@ public class MutationSystem extends OJSystem
 
    /** home path where inputs and output of mujava system are located*/
    //public static String SYSTEM_HOME = "C:/jmutation";
-   //public static String SYSTEM_HOME = "/Users/nli/Documents/mujava";
+   public static String SYSTEM_HOME = "/Users/nli/Documents/mujava";
    //public static String SYSTEM_HOME = "E:/mujava";
-   public static String SYSTEM_HOME = System.getProperty("user.dir");
+   //public static String SYSTEM_HOME = System.getProperty("user.dir");
 
    /** path of Java source files which mutation is applied to  */
    public static String SRC_PATH = SYSTEM_HOME + "/src";
