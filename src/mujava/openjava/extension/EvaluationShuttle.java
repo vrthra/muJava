@@ -23,7 +23,7 @@ import openjava.ptree.AllocationExpression;
 import openjava.ptree.ArrayAccess;
 import openjava.ptree.ArrayAllocationExpression;
 import openjava.ptree.ArrayInitializer;
-import openjava.ptree.AssertStatement;
+//import openjava.ptree.AssertStatement;
 import openjava.ptree.AssignmentExpression;
 import openjava.ptree.BinaryExpression;
 import openjava.ptree.Block;
@@ -260,10 +260,10 @@ public abstract class EvaluationShuttle extends ParseTreeVisitor {
 	 * Author: Lin Deng
 	 * Add support for AssertStatement
 	 */
-	public Statement evaluateDown(AssertStatement p) throws ParseTreeException {
+	/*public Statement evaluateDown(AssertStatement p) throws ParseTreeException {
 		return p;
-	}
-	
+	}*/
+
 	public Expression evaluateDown(InstanceofExpression p)
 		throws ParseTreeException {
 		return p;
@@ -484,11 +484,11 @@ public abstract class EvaluationShuttle extends ParseTreeVisitor {
 	 * Author: Lin Deng
 	 * Add support for AssertStatement
 	 */
-	public Statement evaluateUp(AssertStatement p) throws ParseTreeException {
+	/*public Statement evaluateUp(AssertStatement p) throws ParseTreeException {
 		return p;
-	}
-	
-	
+	}*/
+
+
 	public Expression evaluateUp(InstanceofExpression p)
 		throws ParseTreeException {
 		return p;
@@ -986,7 +986,7 @@ public abstract class EvaluationShuttle extends ParseTreeVisitor {
 	 * Author: Lin Deng
 	 * Add support for AssertStatement
 	 */
-	public void visit(AssertStatement p) throws ParseTreeException {
+	/*public void visit(AssertStatement p) throws ParseTreeException {
 		Statement newp = this.evaluateDown(p);
 		if (newp != p) {
 			p.replace(newp);
@@ -996,7 +996,7 @@ public abstract class EvaluationShuttle extends ParseTreeVisitor {
 		newp = this.evaluateUp(p);
 		if (newp != p)
 			p.replace(newp);
-	}
+	}*/
 
 	public void visit(InstanceofExpression p) throws ParseTreeException {
 		Expression newp = this.evaluateDown(p);

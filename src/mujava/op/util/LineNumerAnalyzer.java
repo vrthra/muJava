@@ -569,7 +569,7 @@ public class LineNumerAnalyzer  extends ParseTreeVisitor
 	 * Author: Lin Deng
 	 * Add support for AssertStatement
 	 */
-	public void visit(AssertStatement p) throws ParseTreeException {
+	/*public void visit(AssertStatement p) throws ParseTreeException {
 
 
 	Expression expr = p.getExpression();
@@ -582,7 +582,7 @@ public class LineNumerAnalyzer  extends ParseTreeVisitor
 		expr2.accept(this);
 	}
 	line_num++;
-}
+}*/
     
     
 

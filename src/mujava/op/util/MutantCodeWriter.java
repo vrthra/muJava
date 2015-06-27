@@ -979,7 +979,7 @@ public class MutantCodeWriter extends ParseTreeVisitor
 	 * Author: Lin Deng
 	 * Add support for AssertStatement
 	 */
-	public void visit(AssertStatement p) throws ParseTreeException {
+	/*public void visit(AssertStatement p) throws ParseTreeException {
 	writeTab();
 
 	out.print(" assert ");
@@ -999,7 +999,7 @@ public class MutantCodeWriter extends ParseTreeVisitor
 
 	out.println(); line_num++;
 	
-}
+}*/
 
     public void visit( InstanceofExpression p )
 	throws ParseTreeException
