@@ -1,1 +1,1 @@
-mvn install:install-file -DgroupId=openjava -DartifactId=openjava -Dversion=MODIFIED -Dfile=./openjava.jar -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file -DgroupId=openjava -DartifactId=openjava -Dversion=MODIFIED -Dfile=./lib/openjava.jar -Dpackaging=jar -DgeneratePom=true
