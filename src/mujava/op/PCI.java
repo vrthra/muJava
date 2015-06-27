@@ -108,9 +108,9 @@ public class PCI extends mujava.op.util.TypeCastMutator
       }
    }
   
-   // 언제 non-equivalent 한가..
-   // [1] assignment 의 오른쪽에 있을때만
-   // [2] method call에서만..
+   //  non-equivalent ..
+   // [1] assignment   
+   // [2] method call..
 
    public void visit( AssignmentExpression p ) throws ParseTreeException 
    {

@@ -109,11 +109,11 @@ public class MutationSystem extends OJSystem
    public static String LOG_IDENTIFIER = ":";
     
    /** List of names of class mutation operators */
-   public static String[] cm_operators = { "IHI","IHD","IOD","IOP","IOR","ISI","ISD","IPC",  // 8��
-                                            "PNC","PMD","PPD","PCI","PCC","PCD","PRV",        // 7��
-                                            "OMR","OMD","OAN",                    // 3��
-                                            "JTI","JTD","JSI","JSD","JID","JDC",              // 6��
-                                            "EOA","EOC","EAM","EMM" };                        // 4�� - �� 28��
+   public static String[] cm_operators = { "IHI","IHD","IOD","IOP","IOR","ISI","ISD","IPC",  // 8
+                                            "PNC","PMD","PPD","PCI","PCC","PCD","PRV",        // 7
+                                            "OMR","OMD","OAN",                    // 3
+                                            "JTI","JTD","JSI","JSD","JID","JDC",              // 6
+                                            "EOA","EOC","EAM","EMM" };                        // 4 -  28
 
    // public static String[] first_tm_operators = {  "ABS","AOR","LCR","ROR","UOI" };
    /*public static String[] second_tm_operators = {  "AOR","AOD","AOI","ROR",

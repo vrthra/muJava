@@ -810,7 +810,7 @@ class ResultTableModel extends AbstractTableModel
                          {"  Mutant Score ", ""}};
 
   /**
-   * AbstractTable Implementation ÇÔ¼ö
+   * AbstractTable Implementation 
    */
    public String getColumnName(int col)
    {

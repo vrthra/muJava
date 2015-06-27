@@ -209,14 +209,14 @@ public class ClassMutantsViewerPanel extends MutantsViewerPanel
       return MutationSystem.CLASS_MUTANT_PATH;
    }
 
-   // name: 생성된 뮤턴트 이름들
-   // 뮤턴트 이름들을 뮤테이션 연산자 별로 계산한다.
+   // name:   
+   //      .
    void printGeneratedMutantNum(String[] operators, int[] num)
    {
     /*
-    String[] operators = MutationSystem.cm_operators; // 클래스 수준 뮤테이션 연산자
-    int[] num = new int[operators.length]; // 뮤테이션 연산자 별 개수값 저장
-    for(int i=0; i<operators.length; i++){ // num 배열 초기화
+    String[] operators = MutationSystem.cm_operators; //    
+    int[] num = new int[operators.length]; //     
+    for(int i=0; i<operators.length; i++){ // num  
       num[i] = 0;
     }
     if(name!=null){
@@ -227,7 +227,7 @@ public class ClassMutantsViewerPanel extends MutantsViewerPanel
       }
     }
     */
-    // 화면에 보여주는 소스
+    //   
       int total = 0;
       CMSummaryTableModel myModel = (CMSummaryTableModel)(summaryTable.getModel());
       for (int i=0; i<operators.length; i++)

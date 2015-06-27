@@ -193,27 +193,27 @@ public abstract class MutantsViewerPanel  extends JPanel
 
    abstract void printGeneratedMutantNum(String[] operators, int[] num);
 
-   // name: 생성된 뮤턴트 이름들
-   // 뮤턴트 이름들을 뮤테이션 연산자 별로 계산한다.
+   // name:   
+   //      .
    void showGeneratedMutantsNum(String[] name)
    {
       String[] operators = null;
 
       switch(getMutantType())
       {
-         case MutationSystem.CM: operators = MutationSystem.cm_operators; // 클래스 수준 뮤테이션 연산자
+         case MutationSystem.CM: operators = MutationSystem.cm_operators; //    
                                  break;
-         case MutationSystem.TM: operators = MutationSystem.tm_operators; // 메소드 수준 뮤테이션 연산자
+         case MutationSystem.TM: operators = MutationSystem.tm_operators; //    
                                  break;
-         case MutationSystem.EM: operators = MutationSystem.em_operators; // 예외상황 뮤테이션 연산자
+         case MutationSystem.EM: operators = MutationSystem.em_operators; //   
                                  break;
 //         case MutationSystem.WM: operators = MutationSystem.wm_operators; 
 //                                 break;
       }
 
-      int[] num = new int[operators.length]; // 뮤테이션 연산자 별 개수값 저장
+      int[] num = new int[operators.length]; //     
       for (int i=0; i<operators.length; i++)
-      { // num 배열 초기화
+      { // num  
          num[i] = 0;
       }
       

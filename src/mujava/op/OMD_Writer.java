@@ -50,8 +50,8 @@ public class OMD_Writer extends MutantCodeWriter
       }
       else
       {
-        // 메소드를 바로 지우면 좋지만, 시험 데이터가 컴파일 될 때 original program의 시그너쳐에 맞춰 개발되어
-        // 반드시 존재해야 하므로, 지우지 않고 redirection 한다.
+        //    ,      original program   
+        //   ,   redirection .
          flag = true;
          super.visit(p);
          flag = false;

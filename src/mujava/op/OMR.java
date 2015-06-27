@@ -27,7 +27,7 @@ public class OMR extends DeclAnalyzer
 
    public void translateDefinition(CompilationUnit comp_unit) throws openjava.mop.MOPException
    {
-      // 복잡한 알고리즘임 -_-;
+      //   -_-;
       OJMethod[] m = getDeclaredMethods();
       int[] omNum = new int[m.length];   // number of overloading method
 

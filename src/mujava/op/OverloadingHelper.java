@@ -201,7 +201,7 @@ public class OverloadingHelper
       {
          for (i=0; i<n.length; i++)
          {
-            // nPr의 형태의 마지막 부분일때 n*(n-1)* ... *1
+            // nPr    n*(n-1)* ... *1
 	        if (n.length == 2 && r == 2)
 	        {
 	           list[index][0] = n[i%2];
@@ -209,7 +209,7 @@ public class OverloadingHelper
 	           index++;
 	        }
 	        else 
-	        { // nCr의 형태일 때
+	        { // nCr  
 	           for (j=0; j<repeat; j++)
 	           {
 	              list[index][r-1] = n[i];
