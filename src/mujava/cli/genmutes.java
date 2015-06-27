@@ -109,7 +109,7 @@ public class genmutes {
 		String[] file_list = new String[1];
 		// if(jct.getD())
 		// {
-		File sessionFolder = new File(muJavaHomePath + "/" + sessionName + "/src");
+		File sessionFolder = new File(muJavaHomePath + "/" + sessionName + "/src/main/java");
 		File[] listOfFilesInSession = sessionFolder.listFiles();
 		file_list = new String[listOfFilesInSession.length];
 		for (int i = 0; i < listOfFilesInSession.length; i++) {
@@ -253,10 +253,10 @@ public class genmutes {
 
 		muJavaHomePath = muJavaHomePath + "/" + sessionName;
 		MutationSystem.SYSTEM_HOME = muJavaHomePath;
-		MutationSystem.SRC_PATH = muJavaHomePath + "/src";
-		MutationSystem.CLASS_PATH = muJavaHomePath + "/classes";
+		MutationSystem.SRC_PATH = muJavaHomePath + "/src/main/java";
+		MutationSystem.CLASS_PATH = muJavaHomePath + "/target/classes";
 		MutationSystem.MUTANT_HOME = muJavaHomePath + "/result";
-		MutationSystem.TESTSET_PATH = muJavaHomePath + "/testset";
+		MutationSystem.TESTSET_PATH = muJavaHomePath + "/target/test-classes";
 
 	}
 

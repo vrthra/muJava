@@ -73,10 +73,10 @@ public class MutationSystem extends OJSystem
    public static String SYSTEM_HOME = System.getProperty("user.dir");
 
    /** path of Java source files which mutation is applied to  */
-   public static String SRC_PATH = SYSTEM_HOME + "/src";
+   public static String SRC_PATH = SYSTEM_HOME + "/src/java/main";
 
    /** path of classes of Java source files at SRC_PATH directory */
-   public static String CLASS_PATH = SYSTEM_HOME + "/classes";
+   public static String CLASS_PATH = SYSTEM_HOME + "/target/classes";
 
    /** home path which mutants are put into */
    public static String MUTANT_HOME = SYSTEM_HOME + "/result";
@@ -97,7 +97,7 @@ public class MutationSystem extends OJSystem
    public static String ORIGINAL_PATH = "";
 
    /** absolute path where test cases are located */
-   public static String TESTSET_PATH = SYSTEM_HOME + "/testset";
+   public static String TESTSET_PATH = SYSTEM_HOME + "/target/test-classes";
 
    /** class name without package name that mutation is applied into */
    public static String CLASS_NAME;
@@ -594,10 +594,10 @@ public class MutationSystem extends OJSystem
          String str = reader.readLine();
          String home_path = str.substring("MuJava_HOME=".length(), str.length());
          SYSTEM_HOME = home_path;
-         SRC_PATH = home_path + "/src";
-         CLASS_PATH = home_path + "/classes";
+         SRC_PATH = home_path + "/src/main/java";
+         CLASS_PATH = home_path + "/target/classes";
          MUTANT_HOME = home_path + "/result";
-         TESTSET_PATH = home_path + "/testset";
+         TESTSET_PATH = home_path + "/target/test-classes";
       } catch (FileNotFoundException e1)
       {
          System.err.println(" I can't find mujava.config file");
@@ -612,10 +612,10 @@ public class MutationSystem extends OJSystem
    public static void setJMutationStructure(String home_path)
    {
       SYSTEM_HOME = home_path;
-      SRC_PATH = home_path + "/src";
-      CLASS_PATH = home_path + "/classes";
+      SRC_PATH = home_path + "/src/main/java";
+      CLASS_PATH = home_path + "/target/classes";
       MUTANT_HOME = home_path + "/result";
-      TESTSET_PATH = home_path + "/testset";
+      TESTSET_PATH = home_path + "/target/test-classes";
    }
    
    /*
@@ -633,10 +633,10 @@ public class MutationSystem extends OJSystem
          String home_path = str.substring("MuJava_HOME=".length(), str.length());
          home_path = home_path+ "/" + sessionName;
          SYSTEM_HOME = home_path;
-         SRC_PATH = home_path + "/src";
-         CLASS_PATH = home_path + "/classes";
+         SRC_PATH = home_path + "/src/main/java";
+         CLASS_PATH = home_path + "/target/classes";
          MUTANT_HOME = home_path + "/result";
-         TESTSET_PATH = home_path + "/testset";
+         TESTSET_PATH = home_path + "/target/test-classes";
       } catch (FileNotFoundException e1)
       {
          System.err.println(" I can't find mujava.config file");

@@ -167,7 +167,7 @@ public class runmutes {
 		if (jct.getParameters().size() == 1) {
 			// read all test names
 			testSessionName = jct.getParameters().get(0);
-			File folder = new File(muJavaHomePath + "/" + testSessionName + "/testset");
+			File folder = new File(muJavaHomePath + "/" + testSessionName + "/target/test-classes");
 			File[] listOfFiles = folder.listFiles();
 
 			for (File file : listOfFiles) {
@@ -192,7 +192,7 @@ public class runmutes {
 			testSessionName = jct.getParameters().get(1);
 
 			// make sure test file exists
-			File folder = new File(muJavaHomePath + "/" + testSessionName + "/testset");
+			File folder = new File(muJavaHomePath + "/" + testSessionName + "/target/test-classes");
 			File[] listOfFiles = folder.listFiles();
 			if (!hasTestFile(listOfFiles, testSetName)) {
 				Util.Error("can't find test file: " + testSetName);
@@ -227,7 +227,7 @@ public class runmutes {
 		}
 
 		String[] file_list = new String[1];
-		File sessionFolder = new File(muJavaHomePath + "/" + testSessionName + "/classes");
+		File sessionFolder = new File(muJavaHomePath + "/" + testSessionName + "/target/classes");
 		File[] listOfFilesInSession = sessionFolder.listFiles();
 		file_list = new String[listOfFilesInSession.length];
 		for (int i = 0; i < listOfFilesInSession.length; i++) {
@@ -563,10 +563,10 @@ public class runmutes {
 	private static void setJMutationStructureAndSession(String sessionName) {
 		muJavaHomePath = muJavaHomePath + "/" + sessionName;
 		MutationSystem.SYSTEM_HOME = muJavaHomePath;
-		MutationSystem.SRC_PATH = muJavaHomePath + "/src";
-		MutationSystem.CLASS_PATH = muJavaHomePath + "/classes";
+		MutationSystem.SRC_PATH = muJavaHomePath + "/src/main/java";
+		MutationSystem.CLASS_PATH = muJavaHomePath + "/target/classes";
 		MutationSystem.MUTANT_HOME = muJavaHomePath + "/result";
-		MutationSystem.TESTSET_PATH = muJavaHomePath + "/testset";
+		MutationSystem.TESTSET_PATH = muJavaHomePath + "/target/test-classes";
 	}
 
 	// save csv file

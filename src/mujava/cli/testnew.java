@@ -111,12 +111,12 @@ public class testnew {
 				
 				if (!source.isAbsolute()) // relative path, attach path, e.g. cal.java, make it c:\mujava\cal.java
 				{
-					source = new File(muJavaHomePath + "/src" + java.io.File.separator + srcFile + ".java");
+					source = new File(muJavaHomePath + "/src/main/java" + java.io.File.separator + srcFile + ".java");
 
 				} 
 
 
-				File desc = new File(muJavaHomePath + "/" + sessionName + "/src");
+				File desc = new File(muJavaHomePath + "/" + sessionName + "/src/main/java");
 				FileUtils.copyFileToDirectory(source, desc);
 
 				// compile src files
@@ -139,10 +139,10 @@ public class testnew {
 		// build the session folders
 
 		makeDir(new File(session_dir_path));
-		makeDir(new File(session_dir_path + "/src"));
-		makeDir(new File(session_dir_path + "/classes"));
+		makeDir(new File(session_dir_path + "/src/main/java"));
+		makeDir(new File(session_dir_path + "/target/classes"));
 		makeDir(new File(session_dir_path + "/result"));
-		makeDir(new File(session_dir_path + "/testset"));
+		makeDir(new File(session_dir_path + "/target/test-classes"));
 
 	}
 
@@ -158,12 +158,12 @@ public class testnew {
 		File file = new File(srcName + ".java");
 		String src_dir_path = new String();
 		if (!file.isAbsolute()) {
-			src_dir_path = muJavaHomePath + "/src" + java.io.File.separator + srcName + ".java";
+			src_dir_path = muJavaHomePath + "/src/main/java" + java.io.File.separator + srcName + ".java";
 		} else {
 			src_dir_path = srcName + ".java";
 		}
 
-		String[] args = new String[] { "-d", session_dir_path + "/classes", src_dir_path };
+		String[] args = new String[] { "-d", session_dir_path + "/target/classes", src_dir_path };
 		int status = javac.compile(args);
 
 		if (status != 0) {
@@ -182,7 +182,7 @@ public class testnew {
 
 	static void makeDir(File dir) {
 		Util.DebugPrint("\nMake " + dir.getAbsolutePath() + " directory...");
-		boolean newly_made = dir.mkdir();
+		boolean newly_made = dir.mkdirs();
 		if (!newly_made) {
 			Util.Error(dir.getAbsolutePath() + " directory exists already.");
 		} else {
