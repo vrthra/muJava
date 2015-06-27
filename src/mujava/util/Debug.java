@@ -31,7 +31,7 @@ public final class Debug {
     final static int SIMPLE_LEVEL = 1;
     final static int EMPTY_LEVEL = 0;
 
-    private static int debugLevel = 0;
+    private static int debugLevel = DETAILED_LEVEL;
 
     public static void setDebugLevel( int level ) {
 	debugLevel = level;

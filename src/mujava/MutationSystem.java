@@ -575,16 +575,16 @@ public class MutationSystem extends OJSystem
    {
       try 
       {
-         File f = new File (MutationSystem.SYSTEM_HOME + "/mujava.config");
+         File f = new File ("mujava.config");
          FileReader r = new FileReader(f);
          BufferedReader reader = new BufferedReader(r);
          String str = reader.readLine();
          String home_path = str.substring("MuJava_HOME=".length(), str.length());
          SYSTEM_HOME = home_path;
-         SRC_PATH = home_path + "/src";
-         CLASS_PATH = home_path + "/classes";
+         SRC_PATH = home_path + "/src/main/java";
+         CLASS_PATH = home_path + "/target/classes";
          MUTANT_HOME = home_path + "/result";
-         TESTSET_PATH = home_path + "/testset";
+         TESTSET_PATH = home_path + "/target/test-classes";
       } catch (FileNotFoundException e1)
       {
          System.err.println(" I can't find mujava.config file");
@@ -599,10 +599,10 @@ public class MutationSystem extends OJSystem
    public static void setJMutationStructure(String home_path)
    {
       SYSTEM_HOME = home_path;
-      SRC_PATH = home_path + "/src";
-      CLASS_PATH = home_path + "/classes";
+      SRC_PATH = home_path + "/src/main/java";
+      CLASS_PATH = home_path + "/target/classes";
       MUTANT_HOME = home_path + "/result";
-      TESTSET_PATH = home_path + "/testset";
+      TESTSET_PATH = home_path + "/target/test-classes";
    }
 }
 

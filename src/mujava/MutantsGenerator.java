@@ -169,13 +169,13 @@ public abstract class MutantsGenerator
    {
       try
       {
-    	  //System.out.println("OJSystem.env0 :" + OJSystem.env );
+    	  System.out.println("OJSystem.env0 :" + OJSystem.env );
          comp_unit.accept(new TypeNameQualifier (file_env));
-         //System.out.println("OJSystem.env1 :" + OJSystem.env );
+         System.out.println("OJSystem.env1 :" + OJSystem.env );
          MemberAccessCorrector corrector = new MemberAccessCorrector(file_env);
-        // System.out.println("OJSystem.env2 :" + OJSystem.env );
+        System.out.println("OJSystem.env2 :" + OJSystem.env );
          comp_unit.accept(corrector);
-         //System.out.println("OJSystem.env3 :" + OJSystem.env );
+         System.out.println("OJSystem.env3 :" + OJSystem.env );
       } 
       catch (ParseTreeException e)
       {
@@ -211,9 +211,12 @@ public abstract class MutantsGenerator
    {
       try
       {
+         Debug.println("generateParseTree:" + original_file );
+         Debug.println("OJSystem.env:" + OJSystem.env);
          comp_unit = parse(original_file);
 
          String pubcls_name = getMainClassName(file_env, comp_unit);
+         Debug.print("pubcls_name:" + pubcls_name);
 
          if (pubcls_name == null)
          {
