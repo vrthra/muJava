@@ -233,6 +233,10 @@ public class Mutator extends mujava.openjava.extension.VariableBinder
 		 super.visit(p);
    }
 
+   public void visit(AssertStatement p) throws ParseTreeException 
+   {
+   }
+
    /**
     * Determine whether two method have the same parameter type
     * @param m1

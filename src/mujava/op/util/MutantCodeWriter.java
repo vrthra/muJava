@@ -203,6 +203,9 @@ public class MutantCodeWriter extends ParseTreeVisitor
 			//}
         }
     }
+   public void visit(AssertStatement p) throws ParseTreeException 
+   {
+   }
 
 
     public void visit( ConstructorDeclaration p )

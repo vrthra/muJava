@@ -54,6 +54,10 @@ public class LineNumerAnalyzer  extends ParseTreeVisitor
     public void pushNest() { setNest( getNest() + 1 ); }
     public void popNest() { setNest( getNest() - 1 ); }
 
+    public void visit(AssertStatement p) throws ParseTreeException 
+   {
+   }
+
     public void visit( ClassDeclaration p )
 	 throws ParseTreeException
     {

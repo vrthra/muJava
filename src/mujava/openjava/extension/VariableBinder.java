@@ -54,7 +54,7 @@ import openjava.ptree.MethodDeclaration;;
  * if a method has type parameters in which identifiers extends from some types, the identifiers and the corresponding types need to be recorded in the closedEnvironment of this method.
  * e.g.   <T extends Comparable<T>> is a type parameter, T and its type Comparable should be recorded such that T could be recognized as a variable of Comparable in this method 
  */
-public class VariableBinder extends ScopeHandler {
+public abstract class VariableBinder extends ScopeHandler {
 
 	public VariableBinder(Environment env) {
 		super(env);
